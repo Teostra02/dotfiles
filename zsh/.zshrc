@@ -1,0 +1,63 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+#zplug
+source /usr/share/zplug/init.zsh
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "plugins/command-not-found", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "lukechilds/zsh-nvm", from:github
+zplug "junegunn/fzf"
+
+# zplug - install/load new plugins when zsh is started or reloaded
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+zplug load >/dev/null
+
+# User configuration
+# Colors
+autoload -Uz colors && colors
+# Completions
+autoload -U compinit && compinit
+# Skip cd
+setopt auto_cd
+# Stop the beeping
+unsetopt BEEP
+#bindkey -v
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+# Not supported in the "fish" shell.
+(cat ~/.cache/wal/sequences &)
+
+# History
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=1000
+#keybindings/aliases
+bindkey '^[[H' beginning-of-line
+bindkey '^[' end-of-line
+
+export NVM_DIR="$HOME/.nvm"
+export NVM_COMPLETION=true
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
