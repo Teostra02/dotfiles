@@ -29,8 +29,10 @@ hc keybind $Mod-q close
 #hc keybind $Mod-Return spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Return spawn kitty # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Shift-Return spawn rofi -show drun
-hc keybind XF86MonBrightnessUp exec /usr/bin/brightnessctl -d intel_backlight
+# hc keybind XF86MonBrightnessUp exec /usr/bin/brightnessctl -d intel_backlight
 set 5%+
+hc keybind XF86MonBrightnessUp spawn light -A 10
+hc keybind XF86MonBrightnessDown spawn light -U 10
 
 # basic movement in tiling and floating mode
 # focusing clients
