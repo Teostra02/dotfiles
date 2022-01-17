@@ -26,13 +26,17 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Shift-c quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-q close
-#hc keybind $Mod-Return spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Return spawn kitty # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Shift-Return spawn rofi -show drun
-# hc keybind XF86MonBrightnessUp exec /usr/bin/brightnessctl -d intel_backlight
-set 5%+
+
+# brightness keybinds
 hc keybind XF86MonBrightnessUp spawn light -A 10
 hc keybind XF86MonBrightnessDown spawn light -U 10
+
+# audio keybinds 
+hc keybind XF86AudioRaiseVolume spawn pulsemixer --change-volume +5
+hc keybind XF86AudioLowerVolume spawn pulsemixer --change-volume -5
+hc keybind XF86AudioMute        spawn pulsemixer --toggle-mutehc 
 
 # basic movement in tiling and floating mode
 # focusing clients
