@@ -127,8 +127,9 @@ ramp-signal-foreground = ${colors.foreground}
 type = internal/pulseaudio
 
 format-volume = <ramp-volume> <bar-volume>
+format-volume-foreground = ${colors.foreground}
 label-volume = %percentage%%
-label-volume-foreground = ${root.foreground}
+label-volume-foreground = ${colors.foreground}
 
 label-muted = 🔇 muted
 ramp-volume-0 = 奄
