@@ -1,0 +1,13 @@
+configuration {
+	modi: "window,drun,run,combi";
+  display-window: "Windows:";
+  display-drun: "Apps:";
+  display-run: "CMDs:";
+  drun-display-format: "{icon} {name}";
+	show-icons: true;
+	font: "Hurmit Nerd Font 16";
+	sidebar-mode: true;
+	separator-style: "dash";
+}
+
+@import "~/.cache/wal/colors-rofi-dark.rasi"

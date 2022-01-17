@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/yezzus/.config/spotify/Users/kz4b7z9xtipbmmzy5c91mzahe-user'
+let g:netrw_dirhist_2='/home/yezzus/Documents/portfolio/projects/Cryptide/src/style'
+let g:netrw_dirhist_1='/home/yezzus/Documents/portfolio/projects/cryptoSite/src/scripts'
+let g:netrw_dirhist_0='/home/yezzus/Documents/portfolio/projects/cryptoSite/src'
+let g:netrw_dirhist_9='/home/yezzus/Documents/portfolio/projects/cryptoSite'
+let g:netrw_dirhist_8='/home/yezzus/Documents/portfolio/projects/cryptoSite/public'
+let g:netrw_dirhist_7='/home/yezzus/Documents/portfolio/projects/cryptoSite/public/scripts'
+let g:netrw_dirhist_6='/home/yezzus/Documents/portfolio/projects/cryptoSite/public'
+let g:netrw_dirhist_5='/home/yezzus/Documents/portfolio/projects/profile-card-component-main/app/styles'
+let g:netrw_dirhist_4='/home/yezzus/Documents/portfolio/projects/profile-card-component-main/app'
