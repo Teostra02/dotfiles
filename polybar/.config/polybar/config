@@ -62,7 +62,7 @@ border-size = 0
 
 modules-left = hlwm sep xwindow
 modules-center = date
-modules-right = wlan sep pulseaudio battery sep powermenu
+modules-right = wlan sep pulseaudio sep battery powermenu
 module-margin-right = 1
 
 cursor-click = pointer
@@ -178,7 +178,7 @@ ramp-capacity-7 = ""
 ramp-capacity-8 = ""
 ramp-capacity-0-foreground = ${colors.red}
 animation-charging-framerate = 910
-format-discharging-padding = 1
+format-discharging-padding = 0
 
 [module/date]
 type = internal/date
