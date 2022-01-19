@@ -128,21 +128,21 @@ noremap <leader>/ :below 15sp term://zsh<CR>i
 set nocompatible 
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim' "Vundle manages itself
-Plugin 'scrooloose/nerdtree' " File sytem explorer
-Plugin 'scrooloose/nerdcommenter' "Easy commenting
-Plugin 'mattn/emmet-vim'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'ap/vim-css-color'
-Plugin 'ryanoasis/vim-devicons'
+call plug#begin()
+Plug 'scrooloose/nerdtree'                          " File sytem explorer
+Plug 'scrooloose/nerdcommenter'                     " Easy commenting
+Plug 'mattn/emmet-vim'                              " Emmet support
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " For your fuzzy searches
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}     " VSC like intellicense
+Plug 'ap/vim-css-color'                             " Colorizer for your css files
+Plug 'ryanoasis/vim-devicons'                       " Icons for folders and files
+Plug 'SirVer/ultisnips'
+Plug 'honza//vim-snippets'
 " Colorschemes
-Plugin 'dylanaraps/wal.vim'
-Plugin 'TheNiteCoder/mountaineer.vim'
-call vundle#end()
-filetype plugin indent on
+Plug 'dylanaraps/wal.vim'
+Plug 'TheNiteCoder/mountaineer.vim'
+call plug#end()
 
 " Colorscheme settings -------------------------------------------------------
 " set termguicolors " enable true colors support
