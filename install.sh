@@ -5,7 +5,8 @@ set -eu -o pipefail
 sudo -n true
 test $? -eq 0 || exit 1 "you should have sudo privileges to run this script"
 
-myApps="herbstluftwm dzen2 libx11-dev libxft-dev libxinerama-dev zsh git neovim stow yarn fzf kitty rofi polybar"
+myApps="herbstluftwm dzen2 libx11-dev libxft-dev libxinerama-dev zsh git neovim
+stow yarn fzf kitty rofi polybar flameshot"
 aptitude update && aptitude install -y $myApps 
 
 stow herbstluftwm
