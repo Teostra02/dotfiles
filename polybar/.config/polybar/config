@@ -97,30 +97,33 @@ format = <label>
 format-foreground = #9fbc00
 format-margin = 0
 
+[module/bluetooth]
+type = custom/script
+exec = rofi-bluetooth --status
+interval = 1
+click-left = rofi-bluetooth &
+;label = %output%
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+
 [module/wlan]
 type = internal/network
 interface = wlan0
 interval = 1.0
+click-left = wifimenu &
 
 format-connected = <ramp-signal> 
-label-connected = %essid%
-format-disconnected =
+label-connected = %{A1:wifimenu:} %essid%%{A}
 
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground}
+format-disconnected = <label-disconnected>
+label-disconnected = %{A1:wifimenu:}%{A} disconnected
+label-disconnected-foreground = ${colors.foreground}
 
 ramp-signal-0 = " "
 ramp-signal-1 = " "
 ramp-signal-2 = " "
 ramp-signal-3 = " "
 ramp-signal-4 = " "
-;ramp-signal-0 = 
-;ramp-signal-1 = 
-;ramp-signal-2 = 
-;ramp-signal-3 = 
-;ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground}
 
 [module/pulseaudio]

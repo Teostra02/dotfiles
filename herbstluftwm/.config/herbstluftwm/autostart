@@ -17,6 +17,7 @@ hc keyunbind --all
 wal -R
 # bar
 "${HOME}/.config/polybar/launch.sh"     
+#dunst 
 
 # keybindings
 # if you have a super key you will be much happier with Mod set to Mod4
